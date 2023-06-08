@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loan Approval Prediction</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Loan Approval Prediction</h1>
+    
+    <form method="POST" action="/predict">
+      <div class="box">
+        <label for="box1">Dependents:</label>
+        <select id="box1" name="box1">
+          <option value="" selected disabled>Select</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3+</option>
+        </select>
+      </div>
+      
+      <div class="box">
+        <label for="box2">Education:</label>
+        <select id="box2" name="box2">
+          <option value="" selected disabled>Select</option>
+          <option value="0">Graduate</option>
+          <option value="1">Not Graduate</option>
+        </select>
+      </div>
+      
+      <div class="box">
+        <label for="box3">Self Employed:</label>
+        <select id="box3" name="box3">
+          <option value="" selected disabled>Select</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+      </div>
+      
+      <div class="box">
+        <label for="box4">Applicant Income:</label>
+        <input type="text" id="box4" name="box4">
+      </div>
+      
+      <div class="box">
+        <label for="box5">Coapplicant Income:</label>
+        <input type="text" id="box5" name="box5">
+      </div>
+      
+      <div class="box">
+        <label for="box6">Loan Amount:</label>
+        <input type="text" id="box6" name="box6">
+      </div>
+      
+      <div class="box">
+        <label for="box7">Loan Amount Term:</label>
+        <input type="text" id="box7" name="box7">
+      </div>
+      
+      <div class="box">
+        <label for="box8">Credit History:</label>
+        <input type="text" id="box8" name="box8">
+      </div>
+      
+      <div class="box">
+        <label for="box9">Property Area:</label>
+        <select id="box9" name="box9">
+          <option value="" selected disabled>Select</option>
+          <option value="0">Rural</option>
+          <option value="1">Semiurban</option>
+          <option value="2">Urban</option>
+        </select>
+      </div>
+      
+      <input type="submit" value="Predict">
+    </form>
+
+    <div class="box">
+      <label for="box10">Loan Status:</label>
+      <p>{{ loan_status }}</p>
+    </div>
+  </div>
+</body>
+</html>
